@@ -1,0 +1,6 @@
+.idea/*
+target/*
+src/main/test/*
+out/*
+
+*.iml
