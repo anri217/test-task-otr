@@ -65,7 +65,7 @@ public class TreeNodeDaoImpl implements TreeNodeDao {
         if (parentNodeId == null){
             treeNodeList = session.createQuery("from TreeNode where parentNode is null order by id")
                     .setFirstResult(pageId * limit - limit)
-                    .setMaxResults(limit + 1).list();
+                    .setMaxResults(limit).list();
         } else {
             treeNodeList = session.createQuery("from TreeNode where parentNode.id = :parentNodeId order by id")
                     .setFirstResult(pageId * limit - limit)
