@@ -69,7 +69,7 @@ public class TreeNodeDaoImpl implements TreeNodeDao {
         } else {
             treeNodeList = session.createQuery("from TreeNode where parentNode.id = :parentNodeId order by id")
                     .setFirstResult(pageId * limit - limit)
-                    .setMaxResults(limit + 1)
+                    .setMaxResults(limit)
                     .setParameter("parentNodeId", parentNodeId).list();
         }
         transaction.commit();
